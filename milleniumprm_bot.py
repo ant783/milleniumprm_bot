@@ -46,7 +46,7 @@ async def weather(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not context.args:
         await update.message.reply_text("Укажи город: /w Berlin")
         return
-    city = "Berlin".join(context.args)
+    city = " ".join(context.args)
     info = get_weather(city)
     if info:
         await update.message.reply_text(info)
