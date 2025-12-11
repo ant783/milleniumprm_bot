@@ -23,7 +23,7 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 if __name__ == '__main__':
     # Создаём приложение с токеном
-    app = ApplicationBuilder().token("ВАШ_ТОКЕН_ЗДЕСЬ").build()
+    app = ApplicationBuilder().token("8275812174:AAHGIrL3Uw8AN7TKdNAtUZYFTi0lQu1Ni-A").build()
     
     # Обработчики
     app.add_handler(CommandHandler("start", start))
