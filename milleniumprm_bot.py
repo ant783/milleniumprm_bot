@@ -6,6 +6,7 @@ from typing import Optional, Callable
 logging.basicConfig(level=logging.INFO)
 
 TELEGRAM_TOKEN = 8275812174:AAHGIrL3Uw8AN7TKdNAtUZYFTi0lQu1Ni-A
+OPENWEATHER_API_KEY = "YOUR_OPENWEATHER_API_KEY_HERE"
 
 def _default_get(url: str, **kwargs):
     return requests.get(url, **kwargs)
@@ -74,7 +75,7 @@ if TELEGRAM_AVAILABLE:
             await update.message.reply_text("Укажи город: /forecast Tokyo")
             return
         city = " ".join(context.args)
-        info = get_forecast(city, api_key=None)
+        info = get_forecast(city, api_key=OPENWEATHER_API_KEY)
         if info:
             await update.message.reply_text(f"Шаман Погоды 3000 предвидит:\n{info}")
         else:
@@ -85,7 +86,7 @@ if TELEGRAM_AVAILABLE:
             await update.message.reply_text("Укажи город: /w Berlin")
             return
         city = " ".join(context.args)
-        info = get_weather(city, api_key=None)
+        info = get_weather(city, api_key=OPENWEATHER_API_KEY)
         if info:
             await update.message.reply_text(info)
         else:
