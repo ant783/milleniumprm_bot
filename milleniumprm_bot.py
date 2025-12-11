@@ -5,7 +5,7 @@ from typing import Optional, Callable
 
 logging.basicConfig(level=logging.INFO)
 
-TELEGRAM_TOKEN = None
+TELEGRAM_TOKEN = 8275812174:AAHGIrL3Uw8AN7TKdNAtUZYFTi0lQu1Ni-A
 
 def _default_get(url: str, **kwargs):
     return requests.get(url, **kwargs)
